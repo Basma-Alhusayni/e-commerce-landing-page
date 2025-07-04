@@ -2,8 +2,190 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Basma's Mobile Store</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
   </head>
-  <body></body>
+
+  <body>
+    <!-- [Assignment: Main] [Level 1] [Requirement: Header with logo and navigation menu] -->
+    <header class="header" role="banner">
+      <img
+        src="./icons/logo.svg"
+        alt="Basma's Mobile Store Logo"
+        class="logo"
+      />
+      <nav aria-label="Main navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="maincontent" role="main">
+      <!-- [Assignment: Main] [Level 1] [Requirement: Hero section with headline, subheading, CTA button] -->
+      <section
+        id="hero"
+        class="hero-image"
+        role="region"
+        aria-label="Welcome banner"
+      >
+        <div class="hero-text">
+          <h1>Welcome to Basma's Mobile Store!</h1>
+          <p>Here you can find the Latest Smartphones at the Best Prices</p>
+          <a href="#products" class="btn" aria-label="Browse Phones"
+            >Browse Phones</a
+          >
+        </div>
+      </section>
+
+      <!-- [Assignment: Main] [Level 1] [Requirement: Product showcase with images, titles, descriptions] -->
+      <section id="products" class="products">
+        <h2>Featured Phones</h2>
+        <div class="product-list">
+          <article class="product">
+            <img src="images/phone1.jpg" alt="iPhone 14 Pro" />
+            <h3>iPhone 14 Pro</h3>
+            <p>
+              Experience the power of A16 Bionic chip and advanced camera
+              system.
+            </p>
+            <p class="price">SAR 3,750</p>
+          </article>
+          <article class="product">
+            <img src="images/phone2.jpg" alt="Samsung Galaxy S23" />
+            <h3>Samsung Galaxy S23</h3>
+            <p>
+              Next-level performance and pro-grade camera in a sleek design.
+            </p>
+            <p class="price">SAR 2,999</p>
+          </article>
+          <article class="product">
+            <img src="images/phone3.jpg" alt="Google Pixel 8" />
+            <h3>Google Pixel 8</h3>
+            <p>Pure Android experience with smart AI features.</p>
+            <p class="price">SAR 2,999</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- [Assignment: Main] [Level 1] [Requirement: Customer reviews or testimonials] -->
+      <section id="reviews" class="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="review-list">
+          <blockquote class="review">
+            <p>"Amazing service and fast delivery. Love my new phone!"</p>
+            <footer><strong>- Aisha Almutairi</strong></footer>
+          </blockquote>
+          <blockquote class="review">
+            <p>"Top quality and the best prices I've seen online."</p>
+            <footer><strong>- Khalid Alharthi</strong></footer>
+          </blockquote>
+          <blockquote class="review">
+            <p>"Great support team. Helped me choose the perfect device."</p>
+            <footer><strong>- Sara Alharbi</strong></footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- [Assignment: Main] [Level 1] [Requirement: Newsletter subscription form] -->
+      <!-- [Assignment: Main] [Level 2] [Requirement: ARIA attributes and proper form labeling] -->
+      <section id="subscribe" class="subscribe">
+        <h2>Subscribe to Our Newsletter</h2>
+        <form aria-label="Newsletter subscription">
+          <label for="email">Email address:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            aria-required="true"
+            placeholder="you@example.com"
+          />
+          <button
+            type="submit"
+            class="btn"
+            aria-label="Subscribe to newsletter"
+          >
+            Subscribe
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <!-- [Assignment: Main] [Level 1] [Requirement: Footer with links, contact info, and social icons] -->
+    <!-- [Assignment: Main] [Level 2] [Requirement: ARIA attributes for social links] -->
+    <footer id="contact" class="footer" role="contentinfo">
+      <div class="footer-container">
+        <div class="footer-left">
+          <p>
+            Email:
+            <a href="mailto:basmaalhusayni@gmail.com"
+              >basmaalhusayni@gmail.com</a
+            >
+          </p>
+        </div>
+
+        <div class="footer-center">
+          <nav aria-label="Footer navigation" class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+          <p class="made-by">Website made by Basma Alhusayni</p>
+        </div>
+
+        <ul class="footer-right social-icons" aria-label="Social media links">
+          <li role="listitem">
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+            >
+              <i class="bi bi-facebook"></i>
+            </a>
+          </li>
+          <li role="listitem">
+            <a
+              href="https://x.com"
+              target="_blank"
+              rel="noopener"
+              aria-label="Twitter"
+            >
+              <i class="bi bi-twitter-x"></i>
+            </a>
+          </li>
+          <li role="listitem">
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+            >
+              <i class="bi bi-instagram"></i>
+            </a>
+          </li>
+          <li role="listitem">
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+            >
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -1,0 +1,702 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  /* [Assignment: CSS] [Level 1] [Requirement: Responsive layout with Flexbox] */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* [Assignment: Main] [Level 2] [Requirement: fully navigable and usable using only a keyboard] */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px dashed #00757b;
+  background-color: #00000029;
+  outline-offset: 3px;
+}
+
+/* [Assignment: CSS] [Level 1] [Requirement: Sticky header] */
+header {
+  position: sticky;
+  top: 0;
+  background-color: #00757b;
+  padding: 20px 10px;
+  /* [Assignment: CSS] [Level 1] [Requirement: Responsive layout with Flexbox] */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  border-radius: 30px;
+  height: 90px;
+  width: 200px;
+}
+
+/* [Assignment: CSS] [Level 1] [Requirement: Responsive layout with Flexbox] */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 12px 20px;
+  display: inline-block;
+  /* [Assignment: CSS] [Level 2] [Requirement: CSS animations/transitions] */
+  transition: background-color 0.3s ease;
+  border-radius: 6px;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a:focus {
+  background-color: #005b14;
+  outline: none;
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./images/hero.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* [Assignment: CSS] [Level 1] [Requirement: Responsive layout with Flexbox] */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  opacity: 0;
+  /* [Assignment: CSS] [Level 2] [Requirement: CSS animations/transitions] */
+  animation: fadeSlideUp 1.5s ease-out forwards;
+  max-width: 90%;
+}
+
+/* [Assignment: CSS] [Level 2] [Requirement: CSS animations/transitions] */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.hero-text h1 {
+  font-size: 44px;
+  margin: 0 0 15px 0;
+  color: #ffffff;
+}
+
+.hero-text p {
+  font-size: 19.2px;
+  margin: 0 0 25px 0;
+  color: #d0d0d0;
+}
+
+.btn {
+  background-color: #005b14;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(0, 117, 123, 0.4);
+  /* [Assignment: CSS] [Level 2] [Requirement: CSS animations/transitions] */
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #00460f;
+  color: #e0f7f7;
+  box-shadow: 0 6px 12px rgba(0, 78, 81, 0.6);
+  transform: scale(1.02);
+  outline: none;
+}
+
+.products {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.products h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #003153;
+}
+
+/* [Assignment: CSS] [Level 1] [Requirement: Responsive layout with Flexbox] */
+/* [Assignment: CSS] [Level 1] [Requirement: Product showcase section] */
+.product-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.product {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 250px;
+  padding: 20px;
+  background-color: #fafafa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product img {
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+.product h3 {
+  margin-top: 10px;
+  color: #00757b;
+}
+
+.product p {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #555;
+  text-align: center;
+}
+
+.price {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #00757b;
+  font-size: 18px;
+}
+
+.reviews {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.reviews h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #003153;
+}
+
+/* [Assignment: CSS] [Level 1] [Requirement: Responsive layout with Flexbox] */
+/* [Assignment: CSS] [Level 1] [Requirement: Customer reviews section] */
+.review-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.review {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-style: italic;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.review footer {
+  margin-top: 15px;
+  color: #003153;
+  font-style: normal;
+  font-weight: 700;
+  text-align: right;
+}
+
+.subscribe {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.subscribe h2 {
+  font-size: 2rem;
+  color: #003153;
+  margin-bottom: 20px;
+}
+
+/* [Assignment: CSS] [Level 1] [Requirement: Newsletter form] */
+/* [Assignment: CSS] [Level 1] [Requirement: Responsive layout with Flexbox] */
+.subscribe form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.subscribe label {
+  flex-basis: 100%;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.subscribe input[type="email"] {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+  max-width: 100%;
+}
+
+.subscribe button {
+  background-color: #005b14;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  /* [Assignment: CSS] [Level 2] [Requirement: CSS animations/transitions] */
+  transition: background-color 0.3s ease;
+}
+
+.subscribe button:hover,
+.subscribe button:focus {
+  background-color: #00460f;
+  outline: none;
+}
+
+/* [Assignment: CSS] [Level 1] [Requirement: Footer section] */
+.footer {
+  background-color: #00757b;
+  color: white;
+  padding: 20px 40px;
+  margin-top: auto;
+}
+
+/* [Assignment: CSS] [Level 1] [Requirement: Responsive layout with Flexbox] */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-left p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer-left a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-left a:hover,
+.footer-left a:focus {
+  text-decoration: underline;
+  cursor: pointer;
+  outline: none;
+}
+
+.footer-center {
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  text-decoration: underline;
+  cursor: pointer;
+  outline: none;
+}
+
+.made-by {
+  font-size: 0.9rem;
+}
+
+.footer-right {
+  list-style: none;
+  padding-left: 0;
+  gap: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-right i {
+  color: white;
+  font-size: 24px;
+  /* [Assignment: CSS] [Level 2] [Requirement: CSS animations/transitions] */
+  transition: color 0.3s ease;
+}
+
+.footer-right a:hover i,
+.footer-right a:focus i {
+  color: #cccccc;
+  outline: none;
+}
+
+/* [Assignment: CSS] [Level 2] [Requirement: Responsive design with media queries] */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    margin-bottom: 15px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu li a {
+    font-size: 16px;
+    padding: 10px 0;
+    display: block;
+    text-align: center;
+  }
+
+  .product-list,
+  .review-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product,
+  .review {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .footer-left,
+  .footer-right {
+    justify-content: center;
+  }
+
+  .footer-center {
+    flex-grow: 0;
+  }
+
+  #maincontent.about-page {
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .about-page p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: #444;
+  }
+
+  #maincontent.products-page {
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .products-page h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #003153;
+  }
+
+  .products-page .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .products-page .product {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 250px;
+    padding: 20px;
+    background-color: #fafafa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .products-page .product img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 5px;
+  }
+
+  .products-page .product h3 {
+    color: #00757b;
+    margin-top: 10px;
+  }
+
+  .products-page .product p {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #555;
+    text-align: center;
+  }
+
+  .products-page .price {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #00757b;
+    font-size: 18px;
+  }
+}
+
+#maincontent.contact-page {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin-top: 30px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #003153;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-title strong {
+  color: #00757b;
+  font-weight: 800;
+}
+
+.contact-content {
+  display: flex;
+  gap: 40px;
+  text-align: left;
+}
+
+.contact-form,
+.contact-details {
+  flex: 1;
+}
+
+.contact-form h3,
+.contact-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #00757b;
+  border-bottom: 2px solid #00757b;
+  padding-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00757b;
+  background-color: #f0f9fa;
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #005b14;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contact-form button:hover,
+.contact-form button:focus {
+  background-color: #00460f;
+  outline: none;
+}
+
+.contact-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-details li {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-details span {
+  font-weight: bold;
+  color: #00757b;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.contact-details li p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* [Assignment: CSS] [Level 2] [Requirement: Responsive design with media queries] */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact-card {
+    padding: 25px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .contact-page form {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-page label {
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .contact-page input[type="text"],
+  .contact-page input[type="email"],
+  .contact-page textarea {
+    padding: 12px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    font-size: 1rem;
+  }
+
+  .contact-page textarea {
+    resize: vertical;
+  }
+
+  .contact-page button {
+    background-color: #00757b;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .contact-page button:hover,
+  .contact-page button:focus {
+    background-color: #005b14;
+    outline: none;
+  }
+}
